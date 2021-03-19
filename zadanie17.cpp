@@ -20,7 +20,7 @@ void	In_ReadFile( string filepath ) {
 	ifstr.open( filepath, ios::in );
 
 	if( !ifstr.is_open() ) {
-		cout << "Не удалось открыть файл!" << endl;
+		cout << "File doesnt exsists!" << endl;
 		return;
 	}
 
@@ -67,7 +67,7 @@ string calc() {
 	}
 
 	if( r_minValueInteger == 30001 ) 
-		return "\nНе найдены числа, подходящие под условия\nИЛИ\nФайл пустой\n";
+		return "\nNumbers for search couldnt found\nOR\nFile is empty\n";
 
 	return r_minValueString;
 	
@@ -82,19 +82,14 @@ int main()
 
 	char buf[128];
 
+	cout << "Zadanie 17 Informatika" << endl;
+    cout << "Current program requiring path to file with numbers" << endl;
 
-
-	// change supported language in terminal 
-	setlocale( LC_ALL, "Russian" );
-
-	cout << "Задание 17 Информатика" << endl;
-    cout << "Программа требует путь к файлу" << endl;
-
-	cout << "Введите путь: ";
+	cout << "Enter path: ";
 	cin >> buf;
 
 	In_ReadFile( buf );
-	cout << "Ответ программы: " << calc().c_str() << endl;
+	cout << "Program result: " << calc().c_str() << endl;
 
 	system( "pause" );
 	
